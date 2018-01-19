@@ -1,0 +1,158 @@
+
+	Expresiones Regulares
+
+
+
+	Lenguaje creado para facilitar el análisis de texto.
+
+	Es útil para:
+	
+	- Verificar que un String concuerde con un patrón
+
+	- Realizar substituciones en strings
+
+	En python para poder hacer uso de estas necesitamos importar el módulo re
+
+	"import re"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	Funciones:
+
+		re.match(patron, texto)
+		 - Se utiliza para ver si hay match al principio del texto
+
+		re.search(patron, texto)
+		 -Se utiliza para ver si hay match en cualquier parte del texto
+
+		re.findall(patron, texto)
+		 -Regresa una lista de todas las subcadenas que hayan hecho match
+
+		re.sub(patron, reemplazo, texto)
+		 - Regresa el texto con el reemplazo en vez del patrón
+
+		re.sub(patron, reemplazo, texto, máximo)
+		 - Regresa el texto con el reemplazo hecho una cantidad de veces, indicada en máximo
+
+
+
+
+
+
+
+
+
+
+
+	Metacaracteres
+
+	Son caracteres que toman valor dependiendo del contexto
+
+		. -> se puede reemplazar por otro caractr
+			a. -> av, ae, a3, a@, a2
+
+
+		* -> se pueded repetir 0 o más veces
+			b* -> b, bb, bbbbb,'', bbbbbbbbbb
+
+
+		+ -> se puede repetir 1 o más veces
+			3+ -> 3, 333, 333333333
+
+
+		? -> se puede repetir 0 o 1 vez
+			d? -> d,''
+
+
+		{n} -> se repite n veces
+			a{3} -> aaa
+
+
+		{n,m} -> se puede repetir min n y max m
+			w{2,5} -> ww, www, wwww, wwwww
+			w{,4} -> '', w, ww, www, wwww
+			w{2,} -> ww, wwww, wwwwwwwwwwwwwwww
+
+
+		| -> puede ser cualquiera de las opciones
+			a|b -> a, b
+
+
+		() -> Sirve para agrupar caracteres
+			(abc){3} -> abcabcabc
+			(abc)? -> abc, ''
+			[(abc)a-z] -> abc, a, b, c, d, e,.....
+			(ab)|(bc) -> ab, bc
+
+
+		[] -> especifica un rango de valores
+			[a-z] -> a, b, c, ...., z
+			[A-Z] -> A, B, C, ...., Z
+			[0-9] -> 0, 1, 2, ...., 9
+			[A-Za-z] ->A, a, B, b, C,......
+			[A-Za-z0-9] -> todas las letras y numeros
+			[A-Za-z0-9._] -> todos los caracteres válidos en un correo electrónico
+
+
+			(el siguiente puede tener 2 funciones)
+		^ -> Sirve para negar un rango
+			[^a-z] -> 2 ,A , @, 8, C,....
+			[^A-Za-z] -> 3, 6, @, 1,.....
+
+
+
+		------------------
+
+		^ -> hace match con el principio del texto
+
+			^hola -> hola como estas?
+
+		$ -> hace match con el final del texto
+			estas?$ -> hola como estas?
+
+
+
+
+
+
+
+
+
+	Alias
+	Son formas resumidas de declarar rangos de caracteres
+
+		(digitos)
+		\d -> equivale a [0-9]
+
+
+		(no digitos)
+		\D -> equivale a [^0-9]
+
+
+		(nombres o palabras)
+		\w -> equivale a [a-zA-Z0-9_]
+
+
+		(no nombres o palabras)
+		\W -> equivale a [^a-zA-Z0-9]
+
+
+		(salto de linea o tabulación)
+		\s -> equivale a [\n\t]
+
+
+		(no salto de linea ni tabulación)
+		\S -> equivale a [^\n\t]
