@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script src="../static/js/signUp.js"></script>
+
+
+
+
+  <title>Mi primer app con Flask</title>
+
+</head>
+<body>
+  <!--Barra de navegación-->
+  <nav class="grey lighten-4">
+    <div class="nav-wrapper container">
+      <a href="#!" class="brand-logo"><img src="../static/img/pythonlogo.png" alt="Logo de python"></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="main" class="titulo">Inicio</a></li>
+        <li class="activate"><a href="badges.html" class="titulo">Iniciar sesión</a></li>
+        <li><a href="showSignUp" class="titulo">Registrarse</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="main">Inicio</a></li>
+        <li class="activate"><a href="badges.html">Iniciar sesión</a></li>
+        <li><a href="showSignUp">Registrarse</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <!--Esto sería mi main-->
+    <div class="container">
+      <h1>Mi primer app con flask</h1>
+      <form>
+
+        <label for="inputName" >Nombre</label>
+        <input type="text" name="inputName" id="inputName" class="validate" placeholder="Nombre" required autofocus>
+        
+        <label for="inputEmail" >Correo</label>
+        <input type="email" name="inputEmail" id="inputEmail" class="validate" placeholder="Correo electrónico" required autofocus>
+        <label for="inputPassword" >Contraseña</label>
+        <input type="password" name="inputPassword" id="inputPassword" class="validate" placeholder="Contraseña" required>
+        
+        <button id="btnSignIn" class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sesión</button>
+      </form>
+    </div>
+  </main>
+  <!--Pie de página-->
+
+  <footer class="page-footer grey darken-3">
+
+    <div class="container">
+      <div class="row m3">
+        <a class="github-button" href="https://github.com/kubos777" data-size="large" data-show-count="true" aria-label="Follow @kubos777 on GitHub">Sígueme @kubos777</a>
+      </div>
+      <div class="row m9">]
+        Hecho con <span class="heart">❤</span> por kubos777 &nbsp;© 2018  
+      </div>
+    </div> 
+
+  </footer>  
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
+$(document).ready(function(){
+ $(".button-collapse").sideNav();
+});
+</script>
+</html>
